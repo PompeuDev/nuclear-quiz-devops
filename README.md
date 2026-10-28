@@ -122,7 +122,7 @@ exit
 | Grupo de recursos | `az group create --name rg-nuclear-quiz --location spaincentral` |
 | VM | `az vm create --resource-group rg-nuclear-quiz --name vm-nuclear-quiz --image Ubuntu2404 --size Standard_B2ls_v2 --authentication-type password --admin-username admlnx --admin-password '<senha>' --vnet-name vnet-nuclear-quiz --nsg nsg-nuclear-quiz --public-ip-address pip-nuclear-quiz --public-ip-sku Standard` |
 | Abrir porta HTTP | `az vm open-port --resource-group rg-nuclear-quiz --name vm-nuclear-quiz --port 80 --priority 1001` |
-| IP público | `az vm show -d -g rg-nuclear-quiz -n vm-nuclear-quiz --query publicIps -o tsv` |
+| IP público | `az network public-ip show -g rg-nuclear-quiz -n pip-nuclear-quiz --query ipAddress -o tsv` |
 | Validar recursos | `az resource list -g rg-nuclear-quiz -o table` |
 | **Excluir recursos** | `az group delete --name rg-nuclear-quiz --yes` |
 | Comprovar exclusão | `az group exists --name rg-nuclear-quiz` (retorna `false`) |

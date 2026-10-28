@@ -65,7 +65,7 @@ echo ""
 echo "Recursos criados no grupo '$RESOURCE_GROUP':"
 az resource list -g "$RESOURCE_GROUP" -o table
 echo ""
-IP=$(az vm show -d -g "$RESOURCE_GROUP" -n "$VM_NAME" --query publicIps -o tsv)
+IP=$(az network public-ip show -g "$RESOURCE_GROUP" -n "$PUBLIC_IP_NAME" --query ipAddress -o tsv)
 echo "IP publico da VM: $IP"
 echo ""
 echo "Proximo passo - conectar na VM por SSH e configurar o Docker:"
