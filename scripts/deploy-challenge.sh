@@ -2,10 +2,10 @@
 # cria o grupo de recursos e a VM no Azure pelo CLI, o docker eu configuro depois por ssh
 
 RESOURCE_GROUP="rg-nuclear-quiz"
-LOCATION="${LOCATION:-spaincentral}"
+LOCATION="spaincentral"
 VM_NAME="vm-nuclear-quiz"
 IMAGE="Ubuntu2404"
-VM_SIZE="${VM_SIZE:-Standard_B2ls_v2}"
+VM_SIZE="Standard_B2ls_v2"
 ADMIN_USERNAME="admlnx"
 ADMIN_PASSWORD="${ADMIN_PASSWORD:-}"
 VNET_NAME="vnet-nuclear-quiz"
