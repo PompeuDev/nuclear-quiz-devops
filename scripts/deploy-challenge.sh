@@ -2,10 +2,10 @@
 # cria o grupo de recursos e a VM no Azure pelo CLI, o docker eu configuro depois por ssh
 
 RESOURCE_GROUP="rg-nuclear-quiz"
-LOCATION="eastus"
+LOCATION="${LOCATION:-spaincentral}"
 VM_NAME="vm-nuclear-quiz"
 IMAGE="Ubuntu2404"
-VM_SIZE="Standard_B2s"
+VM_SIZE="${VM_SIZE:-Standard_B2ls_v2}"
 ADMIN_USERNAME="admlnx"
 ADMIN_PASSWORD="${ADMIN_PASSWORD:-}"
 VNET_NAME="vnet-nuclear-quiz"
@@ -50,7 +50,12 @@ az vm create \
   --vnet-name "$VNET_NAME" \
   --nsg "$NSG_NAME" \
   --public-ip-address "$PUBLIC_IP_NAME" \
+  --public-ip-sku Standard \
   --tags "owner=$TAG_OWNER" "purpose=$TAG_PURPOSE"
+if [ $? -ne 0 ]; then
+  echo "ERRO: a VM nao foi criada. Leia a mensagem de erro acima."
+  exit 1
+fi
 echo ""
 
 echo "Abrindo a porta $PORT_HTTP para trafego na VM '$VM_NAME'..."

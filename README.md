@@ -30,7 +30,7 @@ Esta prova de conceito demonstra a API **containerizada com Docker** e **executa
 | **Azure CLI** (`deploy-challenge.sh`) | Provisiona a infraestrutura por código |
 | **Resource Group** `rg-nuclear-quiz` | Agrupa os recursos e permite apagar tudo de uma vez |
 | **VNet / Public IP / NSG** | Rede, IP público e firewall (portas 22 e 80) |
-| **Azure Virtual Machine** (Ubuntu 24.04, Standard_B2s) | Hospeda o Docker |
+| **Azure Virtual Machine** (Ubuntu 24.04, Standard_B2ls_v2) | Hospeda o Docker |
 | **Docker Engine** | Gera a imagem pelo Dockerfile e executa o container |
 | **Container `nuclear-quiz-api`** | API Spring Boot (porta 8080), publicada na porta 80 da VM |
 | **Banco H2 (em memória)** | Embutido na API; é populado no início pelo `data.sql` |
@@ -119,8 +119,8 @@ exit
 | Etapa | Comando |
 |---|---|
 | Versão / assinatura | `az --version` · `az account show` |
-| Grupo de recursos | `az group create --name rg-nuclear-quiz --location eastus` |
-| VM | `az vm create --resource-group rg-nuclear-quiz --name vm-nuclear-quiz --image Ubuntu2404 --size Standard_B2s --authentication-type password --admin-username admlnx --admin-password '<senha>' --vnet-name vnet-nuclear-quiz --nsg nsg-nuclear-quiz --public-ip-address pip-nuclear-quiz` |
+| Grupo de recursos | `az group create --name rg-nuclear-quiz --location spaincentral` |
+| VM | `az vm create --resource-group rg-nuclear-quiz --name vm-nuclear-quiz --image Ubuntu2404 --size Standard_B2ls_v2 --authentication-type password --admin-username admlnx --admin-password '<senha>' --vnet-name vnet-nuclear-quiz --nsg nsg-nuclear-quiz --public-ip-address pip-nuclear-quiz --public-ip-sku Standard` |
 | Abrir porta HTTP | `az vm open-port --resource-group rg-nuclear-quiz --name vm-nuclear-quiz --port 80 --priority 1001` |
 | IP público | `az vm show -d -g rg-nuclear-quiz -n vm-nuclear-quiz --query publicIps -o tsv` |
 | Validar recursos | `az resource list -g rg-nuclear-quiz -o table` |
