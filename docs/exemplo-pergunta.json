@@ -1,0 +1,10 @@
+{
+  "enunciado": "Qual é o papel da água em uma usina nuclear do tipo PWR?",
+  "alternativaA": "Resfriar o reator e transportar o calor para gerar vapor",
+  "alternativaB": "Servir de combustível para a fissão",
+  "alternativaC": "Produzir radiação para os exames médicos",
+  "alternativaD": "Armazenar a eletricidade gerada",
+  "respostaCorreta": "A",
+  "explicacao": "Nesse tipo de reator a água circula pelo núcleo, retira o calor da fissão e ajuda a produzir o vapor que move as turbinas.",
+  "tema": "GERACAO_DE_ENERGIA"
+}
