@@ -56,7 +56,7 @@ Esta prova de conceito demonstra a API **containerizada com Docker** e **executa
 └── docs/
     ├── arquitetura.svg | .png      # Diagrama
     ├── API.md                      # Documentação e exemplos de payload da API
-    └── ROTEIRO_VIDEO.md            # Roteiro do vídeo
+    └── exemplo-pergunta.json       # Exemplo de payload para o POST de pergunta
 ```
 
 ## 🐳 Executando com Docker (teste local, opcional)
