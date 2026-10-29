@@ -11,7 +11,7 @@
 | João Victor De Souza Braz | 566862 | 2TDSPR |
 | Lucas Pompeu | 567010 | 2TDSPR |
 
-**Vídeo de demonstração (YouTube, não listado):** `<<LINK DO VÍDEO>>`
+**Vídeo de demonstração (YouTube, não listado):** `https://youtu.be/HAkSKCXDapA`
 
 ---
 
